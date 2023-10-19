@@ -34,7 +34,7 @@ const swaggerDocs = swaggerJSDoc(swaggerOptions)
 // Ading routes
 app.use('/api/user', userRouter)
 app.use('/api/todo', todoRouter)
-app.use('/api/docs', serve, setup(swaggerDocs))
+app.use('/', serve, setup(swaggerDocs))
 
 const PORT = process.env.PORT || 3000
 const ENV = process.env.NODE_ENV || 'development'
