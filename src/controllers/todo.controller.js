@@ -104,7 +104,7 @@ export const updateTodo = async (request, response, next) => {
 export const deleteTodo = async (request, response, next) => {
   try {
     const { todoId } = request.params
-    const todo = await TodoModel.findOneAndDelete(todoId)
+    const todo = await TodoModel.findByIdAndDelete(todoId)
 
     if (!todo) {
       return response.status(400).send({ error: 'Entered id not exists' })
